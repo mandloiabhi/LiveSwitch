@@ -70,11 +70,15 @@ func loadPlugins() {
 				fmt.Println("Error finding function in plugin:", err)
 				continue
 			}
-
+            fmt.Println("so look up completed fine for ",functionName)
+			fmt.Println(f)
 			// Use the reflect package to dynamically validate the function's signature
 			if validateFunctionSignature(functionName, f) {
+				fmt.Println("so inside validate Function signature is correcrt")
 				loadedFunctions[functionName] = f
+				fmt.Println("put in loadedFunction map")
 				functionSignatures[functionName] = reflect.TypeOf(f) // Store the function signature dynamically
+				fmt.Println("// Store the function signature dynamically")
 				fmt.Printf("Loaded function: %s from plugin: %s\n", functionName, file.Name())
 			} else {
 				fmt.Printf("Invalid signature for function: %s\n", functionName)
