@@ -111,8 +111,8 @@ func calculateFunctionSignature(pluginPath string) string {
 
 // validateFunctionSignature validates the dynamically loaded function signature
 func validateFunctionSignature(functionName string, loadedFunction interface{}) bool {
-	mu.Lock()
-	defer mu.Unlock()
+	// mu.Lock()
+	// defer mu.Unlock()
 
 	// Get the reflect.Type of the loaded function
 	loadedFuncType := reflect.TypeOf(loadedFunction)
