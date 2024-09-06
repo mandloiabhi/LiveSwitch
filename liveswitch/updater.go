@@ -63,7 +63,7 @@ func loadPlugins() {
 			}
 
 			functionName := strings.TrimSuffix(file.Name(), filepath.Ext(file.Name()))
-			functionName = strings.TrimSuffix(functionName, ".go")
+			//functionName = strings.TrimSuffix(functionName, ".go")
 			fmt.Println(functionName)
 			f, err := p.Lookup(functionName)
 			if err != nil {
